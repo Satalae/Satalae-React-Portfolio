@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Projects from './Projects';
 import About from './Aboutme';
 import Portfolio from './Portfolio';
-import ContactMe from './ContactMe';
+import Contact from './ContactMe';
 
 function pageType(props){
     let returnedPage;
@@ -15,7 +15,7 @@ function pageType(props){
             returnedPage = Portfolio;
             break;
         case 'Contact':
-            returnedPage = ContactMe;
+            returnedPage = Contact;
             break;
         case 'Resume':
             returnedPage = Projects;
