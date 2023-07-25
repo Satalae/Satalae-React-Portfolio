@@ -1,51 +1,30 @@
 import React, { useState } from 'react';
-import Projects from './Projects';
-import About from './Aboutme';
-import Portfolio from './Portfolio';
-import Contact from './ContactMe';
-
-function pageType(props){
-    let returnedPage;
-
-    switch(props.pageState){
-        case 'AboutMe':
-            returnedPage = About;
-            break;
-        case 'Portfolio':
-            returnedPage = Portfolio;
-            break;
-        case 'Contact':
-            returnedPage = Contact;
-            break;
-        case 'Resume':
-            returnedPage = Projects;
-            break;
-    }
-
-    return returnedPage;
-}
+import Navigation from './Navigation';
 
 function MainPage(){
-    // Location of page, swaps between each depending on return state
-    const [pageLocation, setPageLocation] = useState(['AboutMe', 'Portfolio', 'Contact', 'Resume']);
+    // Location of page, swaps between each depending on pageState num
     // Starts on About Me
-    let pageState = 0;
+    const [pageState, setpageState] = useState(0);
 
     // Returns entire mainpage state
     return (
         <div>
             <header>
                 <h1> Harrison Counts </h1>
-                <navbar>
-                    <button type='navButton' onClick={() => pageState = 0}>About Me</button>
-                    <button type='navButton' onClick={() => pageState = 1}>Portfolio</button>
-                    <button type='navButton' onClick={() => pageState = 2}>Contact Me</button>
-                    <button type='navButton' onClick={() => pageState = 3}>Resume</button>
-                </navbar>
+                <div className='navbar'>
+                    <button type='navButton' onClick={() => setpageState(0)}>About Me</button>
+                    <button type='navButton' onClick={() => setpageState(1)}>Portfolio</button>
+                    <button type='navButton' onClick={() => setpageState(2)}>Contact Me</button>
+                    <button type='navButton' onClick={() => setpageState(3)}>Resume</button>
+                </div>
             </header>
 
             {/* Conditional to swap between page types */}
-            {pageType(pageState)}
+            <Navigation page={pageState} />
+
+            <div className='icons'>
+                
+            </div>
         </div>
     );
 }
