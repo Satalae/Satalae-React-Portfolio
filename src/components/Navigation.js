@@ -1,3 +1,4 @@
+// Importing react and useState
 import React, { useState } from 'react';
 
 // About Me Return
@@ -7,6 +8,17 @@ function AboutMe() {
             <h2>About Me</h2>
             
             <img src='./images/frank.jpg' alt='missingFrank' />
+
+            <h3>General</h3>
+            <p>My name is Harrison Counts, I'm attempting to get into Web Dev for the time being
+                and work currently as an assistant manager at a nearby retail store.
+            </p>
+
+            <h3>Interests</h3>
+            <p>
+                I play multiple MMOs like Final Fantasy XIV and World of Warcraft, and have been
+                attempting to 
+            </p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet ante nec dui viverra, nec molestie diam placerat. Cras mollis elit ac massa interdum venenatis. Etiam a ipsum at augue lacinia fermentum. Suspendisse commodo, felis quis lacinia aliquam, est neque malesuada nunc, quis rutrum lorem nibh eu elit. Suspendisse mollis bibendum tellus quis fringilla. Fusce faucibus velit quis ante efficitur, nec mattis enim tempus. In lacus tortor, commodo a porttitor vel, egestas at sapien. Etiam convallis metus non imperdiet rhoncus.
 
@@ -26,40 +38,53 @@ function Portfolio() {
     return(
         <div>
             <h2>Portfolio</h2>
-            <div className='img-container'>
-                <img src='./images/frank.jpg' />
-                <img src='./images/frank.jpg' />
-                <img src='./images/frank.jpg' />
-                <img src='./images/frank.jpg' />
-            </div>
+            
+                <div className='image-text'>
+                    <img src='./images/frank.jpg' alt='projectFrank'/>
+                    <div className='challenge-text'>Challenge 1</div>
+                </div>
+                <div className='image-text'>
+                    <img src='./images/frank.jpg' alt='projectFrank'/>
+                </div>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+                <img src='./images/frank.jpg' alt='projectFrank'/>
+            
         </div>
     );
 }
 
-//Contact Return
-const handleSubmit = (e) => {
-    e.preventDefault();
-}
-
 function Contact() {
+    // Variables for form submission
+    const [givenName, setGivenName] = useState('');
+    const [givenEmail, setGivenEmail] = useState('');
+    const [givenMessage, setGivenMessage] = useState('');
+
     return(
         <div>
-            <h2>Contact Me:</h2>
-            <form className='contact-form' onSubmit={handleSubmit}>
+            <h2>Contact Me</h2>
+            <form className='contact-form'>
                 <h3>Name</h3>
                 <input
                 type='text'
-                placeholder='name'
+                placeholder='Enter your name...'
                 name='name'
                 className='smallText'
+                onChange={(e) => setGivenName(e.target.value)}
                 ></input>
 
                 <h3>Email Address:</h3>
                 <input
                 type='text'
-                placeholder='email'
+                placeholder='Enter your email...'
                 name='email'
                 className='smallText'
+                onChange={(e) => setGivenEmail(e.target.value)}    
                 ></input>
 
                 <h3>Message:</h3>
@@ -68,9 +93,38 @@ function Contact() {
                 placeholder='Type your message here. . .'
                 name='message'
                 className='bigText'
+                onChange={(e) => setGivenMessage(e.target.value)}
                 ></input>
 
-                <button className='contact-submit-button'>Submit</button>
+                <button 
+                className='contact-submit-button'
+                onClick={() => {
+                        // Checks for null cases
+                        if(givenName == null){
+                            alert('No name given! Please enter a name.');
+                            return;
+                        }
+
+                        if(givenEmail == null){
+                            alert('No email given! Please enter an email.');
+                            return;
+                        }
+
+                        if(givenMessage == null){
+                            alert('No message given! Please enter a reason of contact.');
+                            return;
+                        }
+
+                        // Checks if a valid email is given
+                        if(givenEmail === /.+\@.+\..+/){
+                            alert('Invalid email given! Please check input.');
+                            return;
+                        }
+
+                        console.log(givenName + givenEmail + givenMessage);
+                        alert('Form Submitted! I will get back to you soon!');
+                }}
+                >Submit</button>
             </form>
         </div>
     );
