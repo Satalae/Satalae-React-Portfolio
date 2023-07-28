@@ -24,10 +24,9 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: inherit;
   background-color: #20b2aa;
   border-bottom: 4px solid #000000;
-  user-select: none;
+  z-index: 999;
 }
 
 header h1 {
@@ -93,6 +92,10 @@ header h1 {
   padding: 125px 5rem 50px 5rem;
 }
 
+.content p {
+  font-size: larger;
+}
+
 .content h2 {
   justify-content: center;
   border-bottom: 4px dotted #000000;
@@ -106,30 +109,38 @@ header h1 {
 }
 
 .content .image-text {
-  display: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 50%;
 }
 
 .content img {
-  max-height: 20%;
-  max-width: 20%;
-  width: 50%;
-  height: 20%;
+  max-width: 50%;
+  max-height: 100%;
+  height: 300px;
+  width: 650px;
   margin: 2%;
   border: 5px solid #20b2aa;
 }
 
 .content .challenge-text {
-  position: absolute;
-  top: 20%;
-  left: 3%;
+  position: relative;
+  top: 250px;
+  right: 543px;
+  height: 40px;
+  width: 140px;
   color: #000000;
   background-color: #ffffff;
   border: 3px solid #20b2aa;
-  border-left: 0px;
 }
 
-.content img {
-  border: 5px solid #000000;
+.content .smallText {
+  padding: 0;
+}
+
+.content .bigText {
+  height: 120px;
+  width: 40%;
 }
 
 .footer {
@@ -157,4 +168,8 @@ header h1 {
 
 .github-icon:active {
 
+}
+
+@media screen {
+  
 }
