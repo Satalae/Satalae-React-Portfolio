@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Satalae-React-Portfolio/static/css/main.3298ce1a.css",
+    "main.js": "/Satalae-React-Portfolio/static/js/main.d96d6642.js",
+    "index.html": "/Satalae-React-Portfolio/index.html",
+    "main.3298ce1a.css.map": "/Satalae-React-Portfolio/static/css/main.3298ce1a.css.map",
+    "main.d96d6642.js.map": "/Satalae-React-Portfolio/static/js/main.d96d6642.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3298ce1a.css",
+    "static/js/main.d96d6642.js"
+  ]
+}
