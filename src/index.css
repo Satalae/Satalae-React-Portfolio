@@ -126,21 +126,36 @@ header h1 {
 .content .challenge-text {
   position: relative;
   top: 250px;
-  right: 543px;
+  right: 460px;
   height: 40px;
   width: 140px;
+  font-size: 24px;
   color: #000000;
   background-color: #ffffff;
   border: 3px solid #20b2aa;
 }
 
 .content .smallText {
+  width: 300px;
   padding: 0;
 }
 
 .content .bigText {
   height: 120px;
-  width: 40%;
+  width: 300px;
+}
+
+.content .contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 0px;
+}
+
+.content .contact-form .contact-submit-button {
+  margin-top: 5px;
+  width: 100px;
+  padding: 5px;
 }
 
 .footer {

@@ -36,59 +36,81 @@ function Portfolio() {
             <h2>Portfolio</h2>
             
                 <div className='image-text'>
-                    <img src='./images/Chal1.png' alt='project1'/>
+                    <a href='https://github.com/Satalae/html-Challenge1'>
+                        <img src='./images/Chal1.png' alt='project1'/>
+                    </a>
                     <div className='challenge-text'>Challenge 1</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal2.png' alt='project2'/>
+                    <a href='https://github.com/Satalae/Satalae_Portfolio_Site'>
+                        <img src='./images/Chal2.png' alt='project2'/>
+                    </a>
                     <div className='challenge-text'>Challenge 2</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal3.png' alt='project3'/>
+                    <a href='https://github.com/Satalae/Challenge-03'>
+                        <img src='./images/Chal3.png' alt='project3'/>
+                    </a>
                     <div className='challenge-text'>Challenge 3</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal4.png' alt='project4'/>
+                    <a href='https://github.com/Satalae/WebAPI-Challenge-04'>
+                        <img src='./images/Chal4.png' alt='project4'/>
+                    </a>
                     <div className='challenge-text'>Challenge 4</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal5.png' alt='project5'/>
+                    <a href='https://github.com/Satalae/TP-API-Challenge05'>
+                        <img src='./images/Chal5.png' alt='project5'/>
+                    </a>
                     <div className='challenge-text'>Challenge 5</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal6.png' alt='project6'/>
+                    <a href='https://github.com/Satalae/Weather-Tracking-App'>
+                        <img src='./images/Chal6.png' alt='project6'/>
+                    </a>
                     <div className='challenge-text'>Challenge 6</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal9.png' alt='project9'/>
+                    <a href='https://github.com/Satalae/ReadMe-Generator'>
+                        <img src='./images/Chal9.png' alt='project9'/>
+                    </a>
                     <div className='challenge-text'>Challenge 9</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal10.png' alt='project10'/>
+                    <a href='https://github.com/Satalae/Logo-Generator'>
+                        <img src='./images/Chal10.png' alt='project10'/>
+                    </a>
                     <div className='challenge-text'>Challenge 10</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal11.png' alt='project11'/>
+                    <a href='https://github.com/Satalae/Note-Taker'>
+                        <img src='./images/Chal11.png' alt='project11'/>
+                    </a>
                     <div className='challenge-text'>Challenge 11</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal12.png' alt='project12'/>
+                    <a href='https://github.com/Satalae/Employee-Tracker'>
+                        <img src='./images/Chal12.png' alt='project12'/>
+                    </a>
                     <div className='challenge-text'>Challenge 12</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal13.png' alt='project13'/>
+                    <a href='https://github.com/Satalae/ECommerce-Backend'>
+                        <img src='./images/Chal13.png' alt='project13'/>
+                    </a>
                     <div className='challenge-text'>Challenge 13</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Frank.jpg' alt='project17'/>
-                    <div className='challenge-text'>Challenge 17</div>
-                </div>
-                <div className='image-text'>
-                    <img src='./images/Chal18.png' alt='project18'/>
+                    <a href='https://github.com/Satalae/Social-Media-C18'>
+                        <img src='./images/Chal18.png' alt='project18'/>
+                    </a>
                     <div className='challenge-text'>Challenge 18</div>
                 </div>
                 <div className='image-text'>
-                    <img src='./images/Chal19.png' alt='project19'/>
+                    <a href='https://github.com/Satalae/Text-Editor-C19'>
+                        <img src='./images/Chal19.png' alt='project19'/>
+                    </a>
                     <div className='challenge-text'>Challenge 19</div>
                 </div>
             
@@ -105,7 +127,35 @@ function Contact() {
     return(
         <div>
             <h2>Contact Me</h2>
-            <form className='contact-form'>
+            <form className='contact-form' onSubmit={(event) => {
+                event.preventDefault();
+
+                console.log(givenName + givenEmail + givenMessage);
+
+                // Checks for null cases
+                if(!givenName){
+                    alert('No name given! Please enter a name.');
+                    return;
+                }
+
+                if(!givenEmail){
+                    alert('No email given! Please enter an email.');
+                    return;
+                }
+
+                if(!givenMessage){
+                    alert('No message given! Please enter a reason of contact.');
+                    return;
+                }
+
+                // Checks if a valid email is given
+                if(givenEmail !== /.+\@.+\..+/){
+                    alert('Invalid email given! Please check input.');
+                    return;
+                }
+
+                alert('Form Submitted! I will get back to you soon!');
+            }}>
                 <h3>Name</h3>
                 <input
                 type='text'
@@ -133,35 +183,7 @@ function Contact() {
                 onChange={(e) => setGivenMessage(e.target.value)}
                 ></input>
 
-                <button 
-                className='contact-submit-button'
-                onClick={() => {
-                        // Checks for null cases
-                        if(givenName == null){
-                            alert('No name given! Please enter a name.');
-                            return;
-                        }
-
-                        if(givenEmail == null){
-                            alert('No email given! Please enter an email.');
-                            return;
-                        }
-
-                        if(givenMessage == null){
-                            alert('No message given! Please enter a reason of contact.');
-                            return;
-                        }
-
-                        // Checks if a valid email is given
-                        if(givenEmail === /.+\@.+\..+/){
-                            alert('Invalid email given! Please check input.');
-                            return;
-                        }
-
-                        console.log(givenName + givenEmail + givenMessage);
-                        alert('Form Submitted! I will get back to you soon!');
-                }}
-                >Submit</button>
+                <input type="submit" className='contact-submit-button' />
             </form>
         </div>
     );
