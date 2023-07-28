@@ -113,6 +113,24 @@ function Portfolio() {
                     </a>
                     <div className='challenge-text'>Challenge 19</div>
                 </div>
+                <div className='image-text'>
+                    <a href='https://github.com/andrewmuhn/harry-potter-spell-book'>
+                        <img src='./images/Proj1.png' alt='groupProj1'/>
+                    </a>
+                    <div className='challenge-text'>Project 1</div>
+                </div>
+                <div className='image-text'>
+                        <a href='https://github.com/Satalae/Poll-Maker'>
+                        <img src='./images/Proj2.png' alt='groupProj2'/>
+                    </a>
+                    <div className='challenge-text'>Project 2</div>
+                </div>
+                <div className='image-text'>
+                    <a href='https://github.com/BanditHeelerPDX/hey-remember-bbs'>
+                        <img src='./images/Proj3.png' alt='groupProj3'/>
+                    </a>
+                    <div className='challenge-text'>Project 3</div>
+                </div>
             
         </div>
     );
